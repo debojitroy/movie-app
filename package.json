@@ -1,0 +1,16 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "React Project to demo Idea to Production Process",
+  "main": "index.js",
+  "repository": "git@github.com:debojitroy/movie-app.git",
+  "author": "Debojit Roy <debojity2k@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.21.0"
+  }
+}
