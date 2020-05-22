@@ -13,8 +13,7 @@
   "scripts": {},
   "lint-staged": {
     "packages/**/*.{js,ts,jsx,tsx}": [
-      "eslint --color --fix",
-      "git add"
+      "eslint --color --fix"
     ]
   },
   "devDependencies": {
