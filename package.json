@@ -1,0 +1,39 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "React Project to demo Idea to Production Process",
+  "main": "index.js",
+  "repository": "git@github.com:debojitroy/movie-app.git",
+  "author": "Debojit Roy <debojity2k@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "scripts": {},
+  "lint-staged": {
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "eslint --color --fix"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
+    "@typescript-eslint/parser": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "husky": "^4.2.5",
+    "lerna": "^3.21.0",
+    "lint-staged": "^10.2.4",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
