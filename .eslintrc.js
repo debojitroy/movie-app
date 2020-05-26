@@ -18,6 +18,7 @@ module.exports = {
 		'react-hooks/exhaustive-deps': 'warn',
 		'@typescript-eslint/explicit-function-return-type': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/explicit-module-boundary-types': 'off',
 	},
 	settings: {
 		react: {

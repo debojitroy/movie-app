@@ -10,7 +10,9 @@
     "packages/*"
   ],
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "postinstall": "echo 'Running post install to remove React Native' && rm -rf packages/components/node_modules/@types/react-native && rm -rf node_modules/@types/react-native"
+  },
   "lint-staged": {
     "packages/**/*.{js,ts,jsx,tsx}": [
       "eslint --color --fix"
