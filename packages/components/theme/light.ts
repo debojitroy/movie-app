@@ -1,12 +1,7 @@
-import { Theme } from './theme';
+import merge from 'lodash/merge';
+import cloneDeep from 'lodash/cloneDeep';
+import { Theme, defaultTheme } from './theme';
 
-const lightTheme: Theme = {
-	name: 'LIGHT',
-	color: {
-		backgroundColor: '#fff',
-		primary: '#007bff',
-		secondary: '#6c757d',
-	},
-};
+const lightTheme: Theme = merge(cloneDeep(defaultTheme), { name: 'LIGHT' });
 
 export default lightTheme;

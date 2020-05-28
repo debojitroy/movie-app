@@ -9,6 +9,7 @@ module.exports = {
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	collectCoverageFrom: [
 		'src/**/*.{ts,tsx}',
+		'!src/**/*.d.{ts,tsx}',
 		'!src/**/index.{ts,tsx}',
 		'!src/**/styled.{ts,tsx}',
 		'!src/**/*.stories.{ts,tsx}',
