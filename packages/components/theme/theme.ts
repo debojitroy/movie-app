@@ -2,6 +2,7 @@ export type DeepPartial<T> = { [P in keyof T]?: DeepPartial<T[P]> };
 
 export interface Theme {
 	name: string;
+	isDark: boolean;
 	color: {
 		backgroundColor: string;
 		textColor: string;
@@ -10,9 +11,13 @@ export interface Theme {
 		success: string;
 		warning: string;
 		danger: string;
+		grayDarker: string;
 		grayDark: string;
 		grayLight: string;
 		grayLighter: string;
+		inputBorder: string;
+		inputBorderFocus: string;
+		inputBorderShadowFocus: string;
 	};
 	font: {
 		family: string;
@@ -37,6 +42,7 @@ export interface Theme {
 
 export const defaultTheme: Theme = {
 	name: 'DEFAULT',
+	isDark: false,
 	color: {
 		backgroundColor: '#fff',
 		textColor: '#444A47',
@@ -45,9 +51,13 @@ export const defaultTheme: Theme = {
 		success: '#00875a',
 		warning: '#f7b228',
 		danger: '#de2362',
+		grayDarker: '#696969',
 		grayDark: '#aeb0b5',
 		grayLight: '#e4e2e0',
 		grayLighter: '#f5f8fa',
+		inputBorder: '1px solid #909599',
+		inputBorderFocus: '1px solid #0077b3',
+		inputBorderShadowFocus: '0 0 0 1px #0077b3',
 	},
 	font: {
 		family: "'Nunito Sans', sans-serif",
