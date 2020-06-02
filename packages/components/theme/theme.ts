@@ -5,6 +5,9 @@ export interface Theme {
 	isDark: boolean;
 	color: {
 		backgroundColor: string;
+		backgroundWithOpacityHigh: string;
+		backgroundWithOpacityMedium: string;
+		backgroundWithOpacityLow: string;
 		textColor: string;
 		primaryColor: string;
 		primaryTextColor: string;
@@ -45,6 +48,9 @@ export const defaultTheme: Theme = {
 	isDark: false,
 	color: {
 		backgroundColor: '#fff',
+		backgroundWithOpacityHigh: 'rgba(255,255,255, 0.8)',
+		backgroundWithOpacityMedium: 'rgba(255,255,255, 0.5)',
+		backgroundWithOpacityLow: 'rgba(255,255,255, 0.3)',
 		textColor: '#444A47',
 		primaryColor: '#000051',
 		primaryTextColor: '#fff',

@@ -7,6 +7,9 @@ const darkTheme: Theme = merge(cloneDeep(defaultTheme), {
 	isDark: true,
 	color: {
 		backgroundColor: '#000',
+		backgroundWithOpacityHigh: 'rgba(0,0,0, 0.8)',
+		backgroundWithOpacityMedium: 'rgba(0,0,0, 0.5)',
+		backgroundWithOpacityLow: 'rgba(0,0,0, 0.3)',
 		textColor: '#fff',
 		primaryColor: '#534bae',
 		primaryTextColor: '#fff',
