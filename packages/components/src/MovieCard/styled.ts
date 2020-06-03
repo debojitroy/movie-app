@@ -1,35 +1,35 @@
 import styled from 'styled-components';
+import Card from 'react-bootstrap/Card';
 import { Theme } from '../../theme/theme';
 
-export const HeroTextContainer = styled.div`
-	margin: 0 1rem;
-	padding: 1rem;
-	display: inline-block;
+export const StyledCard = styled(Card)`
+	max-width: 11rem;
+`;
+
+export const StyledCardImage = styled(Card.Img)`
+	cursor: pointer;
+`;
+
+export const StyledCardBody = styled(Card.Body)`
 	font-family: ${(props: { theme: Theme }) => props.theme.font.family};
 	color: ${(props: { theme: Theme }) => props.theme.color.textColor};
 	background: ${(props: { theme: Theme }) =>
 		props.theme.color.backgroundWithOpacityHigh};
 `;
 
-export const HeroTitle = styled.h3`
+export const StyledCardTitle = styled(Card.Title)`
 	font-family: ${(props: { theme: Theme }) => props.theme.font.family};
-	color: ${(props: { theme: Theme }) => props.theme.color.textColor};
 	font-size: ${(props: { theme: Theme }) => props.theme.font.size.large};
 	font-weight: ${(props: { theme: Theme }) => props.theme.font.weight.semiBold};
-
+	color: ${(props: { theme: Theme }) => props.theme.color.textColor};
+	cursor: pointer;
 	&:hover {
 		text-decoration: underline;
-		cursor: pointer;
 	}
 `;
 
-export const HeroSubText = styled.p`
+export const StyledCardText = styled(Card.Text)`
 	font-family: ${(props: { theme: Theme }) => props.theme.font.family};
+	font-size: ${(props: { theme: Theme }) => props.theme.font.size.medium};
 	color: ${(props: { theme: Theme }) => props.theme.color.textColor};
-	font-size: ${(props: { theme: Theme }) => props.theme.font.size.xSmall};
-`;
-export const HeroDescription = styled.p`
-	font-family: ${(props: { theme: Theme }) => props.theme.font.family};
-	color: ${(props: { theme: Theme }) => props.theme.color.textColor};
-	font-size: ${(props: { theme: Theme }) => props.theme.font.size.small};
 `;

@@ -13,12 +13,14 @@ const Hero: React.FC<{
 	movieName: string;
 	movieRating: string;
 	mobieDescription: string;
+	onTitleClick: () => void;
 }> = ({
 	idSelector,
 	backgroundImage,
 	movieName,
 	movieRating,
 	mobieDescription,
+	onTitleClick,
 }) => {
 	return (
 		<Jumbotron
@@ -30,7 +32,7 @@ const Hero: React.FC<{
 			}}
 		>
 			<HeroTextContainer>
-				<HeroTitle>{movieName}</HeroTitle>
+				<HeroTitle onClick={onTitleClick}>{movieName}</HeroTitle>
 				<HeroSubText>{movieRating}</HeroSubText>
 				<HeroDescription>{mobieDescription}</HeroDescription>
 			</HeroTextContainer>

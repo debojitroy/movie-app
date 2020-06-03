@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import Hero from '../Hero';
 import { Theme } from '../../../theme/theme';
 
@@ -30,6 +31,7 @@ export const hero = () => (
 				'mobieDescription',
 				'Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.'
 			)}
+			onTitleClick={action('onTitleClick')}
 		/>
 	</Background>
 );
