@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<style>
+			#place-holder-wrapper {
+				max-width: 900px;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 10px;
+				grid-auto-rows: 200px;
+				grid-template-areas:
+					'. a a .'
+					'. a a .';
+			}
+			#centered-place-holder {
+				grid-area: a;
+				align-self: center;
+				justify-self: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			#centered-place-holder h1 {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 3rem;
+			}
+			#centered-place-holder p {
+				line-height: 3rem;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="awesome-movie-app">
+			<div id="place-holder-wrapper">
+				<div id="centered-place-holder">
+					<h1>Welcome to Awesome Movie App</h1>
+					<p>Please wait...</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
