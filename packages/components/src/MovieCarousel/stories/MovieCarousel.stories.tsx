@@ -21,7 +21,7 @@ const BackgroundVideo = styled.div`
 `;
 
 export default {
-	title: 'Components / MovieCarousel',
+	title: '2 - Components / MovieCarousel',
 	component: MovieCarousel,
 };
 

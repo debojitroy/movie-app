@@ -9,7 +9,7 @@ const logoImage = {
 };
 
 export default {
-	title: 'Components / Logo',
+	title: '2 - Components / Logo',
 	component: Logo,
 };
 

@@ -14,7 +14,7 @@ const Background = styled(Container)`
 `;
 
 export default {
-	title: 'Components / MovieCreditRow',
+	title: '2 - Components / MovieCreditRow',
 	component: MovieCreditRow,
 };
 

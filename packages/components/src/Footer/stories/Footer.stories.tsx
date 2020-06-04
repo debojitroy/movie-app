@@ -11,7 +11,7 @@ const Background = styled.div`
 `;
 
 export default {
-	title: 'Components / Footer',
+	title: '2 - Components / Footer',
 	component: Footer,
 };
 

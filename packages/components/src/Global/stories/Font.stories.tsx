@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import { Theme } from '../../../theme/theme';
 
 export default {
-	title: 'Design / Font',
+	title: '1 - Design / Font',
 };
 
 const FontFamily = styled.p`

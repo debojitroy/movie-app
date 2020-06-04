@@ -64,7 +64,7 @@ const WrapperContainer: React.FC<{
 };
 
 export default {
-	title: 'Components / Toggle',
+	title: '2 - Components / Toggle',
 	component: Toggle,
 };
 

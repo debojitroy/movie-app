@@ -13,7 +13,7 @@ const Background = styled.div`
 `;
 
 export default {
-	title: 'Components / Hero',
+	title: '2 - Components / Hero',
 	component: Hero,
 };
 

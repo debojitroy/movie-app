@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import Button from '../Button';
 
 export default {
-	title: 'Sample / Button',
+	title: '999 - Sample / Button',
 	component: Button,
 };
 

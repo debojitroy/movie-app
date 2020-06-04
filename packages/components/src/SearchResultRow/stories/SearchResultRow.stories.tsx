@@ -12,7 +12,7 @@ const Background = styled.div`
 `;
 
 export default {
-	title: 'Components / SearchResultRow',
+	title: '2 - Components / SearchResultRow',
 	component: SearchResultRow,
 };
 

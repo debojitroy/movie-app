@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Theme } from '../../../theme/theme';
 
 export default {
-	title: 'Design / Color',
+	title: '1 - Design / Color',
 };
 
 const Background = styled.div`

@@ -78,7 +78,7 @@ const searchFunction = async (value: string): Promise<MovieSuggestion[]> => {
 };
 
 export default {
-	title: 'Components / Search',
+	title: '2 - Components / Search',
 	component: Search,
 };
 

@@ -14,7 +14,7 @@ const Background = styled.div`
 `;
 
 export default {
-	title: 'Components / MovieCard',
+	title: '2 - Components / MovieCard',
 	component: MovieCard,
 };
 
