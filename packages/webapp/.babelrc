@@ -12,24 +12,9 @@
 		"@babel/preset-react"
 	],
 	"plugins": [
-		"@babel/plugin-proposal-export-default-from",
-		"@babel/plugin-proposal-object-rest-spread",
 		"@babel/plugin-transform-async-to-generator",
 		"inline-dotenv",
-    "@babel/plugin-syntax-dynamic-import",
 		"@babel/transform-runtime",
-		[
-			"@babel/plugin-proposal-decorators",
-			{
-				"legacy": true
-			}
-		],
-		[
-			"@babel/plugin-proposal-class-properties",
-			{
-				"loose": true
-			}
-		],
 		[
 			"module-resolver",
 			{
