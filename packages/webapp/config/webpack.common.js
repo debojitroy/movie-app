@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -10,6 +11,22 @@ module.exports = {
 	entry: { main: './src/entry/index.tsx' },
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
+		alias: {
+			'@common': path.resolve(__dirname, 'src/common'),
+			'@components': path.resolve(__dirname, 'src/common/components'),
+			'@entry': path.resolve(__dirname, 'src/entry'),
+			'@redux': path.resolve(__dirname, 'src/common/redux'),
+			'@actions': path.resolve(__dirname, 'src/common/redux/actions'),
+			'@reducers': path.resolve(__dirname, 'src/common/redux/reducers'),
+			'@store': path.resolve(__dirname, 'src/common/redux/store'),
+			'@config': path.resolve(__dirname, 'src/common/config'),
+			'@utils': path.resolve(__dirname, 'src/common/utils'),
+			'@routes': path.resolve(__dirname, 'src/common/routes'),
+			'@features': path.resolve(__dirname, 'src/features'),
+		},
+	},
+	node: {
+		fs: 'empty',
 	},
 	module: {
 		rules: [

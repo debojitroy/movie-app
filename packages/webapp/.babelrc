@@ -10,5 +10,43 @@
 			}
 		],
 		"@babel/preset-react"
+	],
+	"plugins": [
+		"@babel/plugin-proposal-export-default-from",
+		"@babel/plugin-proposal-object-rest-spread",
+		"@babel/plugin-transform-async-to-generator",
+		"inline-dotenv",
+    "@babel/plugin-syntax-dynamic-import",
+		"@babel/transform-runtime",
+		[
+			"@babel/plugin-proposal-decorators",
+			{
+				"legacy": true
+			}
+		],
+		[
+			"@babel/plugin-proposal-class-properties",
+			{
+				"loose": true
+			}
+		],
+		[
+			"module-resolver",
+			{
+				"alias": {
+					"@common": "./src/common",
+					"@components": "./src/common/components",
+					"@entry": "./src/entry",
+					"@redux": "./src/common/redux",
+					"@actions": "./src/common/redux/actions",
+					"@reducers": "./src/common/redux/reducers",
+					"@store": "./src/common/redux/store",
+					"@config": "./src/common/config",
+					"@utils": "./src/common/utils",
+					"@routes": "./src/common/routes",
+					"@features": "./src/features"
+				}
+			}
+		]
 	]
 }

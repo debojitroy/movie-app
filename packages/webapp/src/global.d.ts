@@ -1,0 +1,9 @@
+declare module "*.png";
+declare module "*.jpg";
+declare module "*.svg";
+declare module "@awesome-movie-app/components/lib/Global";
+declare module '@awesome-movie-app/core/lib/services/bootstrap';
+declare module '@awesome-movie-app/core/lib/services/searchMovie';
+declare module '@awesome-movie-app/components/lib/Logo/Logo';
+declare module '@awesome-movie-app/components/lib/Toggle/Toggle';
+declare module '@awesome-movie-app/components/lib/Search/Search';
