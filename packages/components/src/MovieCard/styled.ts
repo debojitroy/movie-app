@@ -3,7 +3,13 @@ import Card from 'react-bootstrap/Card';
 import { Theme } from '../../theme/theme';
 
 export const StyledCard = styled(Card)`
-	max-width: 11rem;
+	flex-basis: 150px !important;
+	max-width: 150px !important;
+	margin-bottom: 1rem !important;
+	@media (max-width: 576px) {
+		flex-grow: 1 !important;
+		max-width: 100% !important;
+	}
 `;
 
 export const StyledCardImage = styled(Card.Img)`

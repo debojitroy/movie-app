@@ -3,7 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import LoadingScreen from '@components/Loader';
 import ErrorPage from '@components/ErrorPage';
 
-const Home = lazy(() => import('@features/Landing/components/index'));
+const Home = lazy(() =>
+	import('@features/Landing/redux/containers/LandingContainer')
+);
 
 export const BaseRoutes = () => (
 	<Suspense fallback={<LoadingScreen loaderDescription="Please wait..." />}>

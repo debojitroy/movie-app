@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Global from '@awesome-movie-app/components/lib/Global';
 import DarkTheme from '@awesome-movie-app/components/lib/theme/dark';
 import LightTheme from '@awesome-movie-app/components/lib/theme/light';
+import SiteHeaderContainer from '@features/SiteHeader/redux/container/SiteHeaderContainer';
 import { MovieAppReduxState } from '@reducers/index';
 import { THEME_LIGHT } from '@common/config/constants';
 
@@ -27,7 +28,10 @@ const SiteContainer: React.FC<{ theme: string; children: React.ReactNode }> = ({
 	return (
 		<ThemeProvider theme={siteTheme}>
 			<Global />
-			<Container style={{ padding: '2rem 0' }}>{children}</Container>
+			<Container style={{ padding: '2rem 0' }}>
+				<SiteHeaderContainer />
+				{children}
+			</Container>
 		</ThemeProvider>
 	);
 };

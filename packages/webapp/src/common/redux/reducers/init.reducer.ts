@@ -19,6 +19,6 @@ export default (state = initState, action: any) => {
 				currentTheme: action.payload.theme,
 			};
 		default:
-			return initState;
+			return state;
 	}
 };
