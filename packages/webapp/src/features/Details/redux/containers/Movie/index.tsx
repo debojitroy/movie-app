@@ -1,23 +1,19 @@
 import { connect } from 'react-redux';
 import { MovieAppReduxState } from '@reducers/index';
 import { goToPersonDetail, goToMovieDetail } from '@actions/navigate.action';
-import { fetchPopularList } from '@features/Landing/redux/actions/landing.action';
-import Landing from '@features/Landing/components';
+import { getMovieDetail } from '@features/Details/redux/actions/movie.detail.action';
+import MovieDetails from '@features/Details/components/Movie';
 
 const mapStateToProps = (state: MovieAppReduxState) => {
-	const { landing } = state;
+	const { movies } = state;
 	return {
-		isLoading: landing.isLoading,
-		isError: landing.isError,
-		lastRefresh: landing.lastRefresh,
-		popularMovies: landing.popularMovies,
-		popularPeople: landing.popularPeople,
+		movieState: movies,
 	};
 };
 
 const mapDispatchToProps = (dispatch: (action: any) => void, ownProps: any) => {
 	return {
-		fetchPopularList: () => dispatch(fetchPopularList()),
+		getMovieDetails: (movieId: number) => dispatch(getMovieDetail(movieId)),
 		onMovieClick: (movieId: number, movieName: string) =>
 			goToMovieDetail(movieId, movieName, ownProps.history),
 		onPersonClick: (personId: number, personName: string) =>
@@ -25,4 +21,4 @@ const mapDispatchToProps = (dispatch: (action: any) => void, ownProps: any) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails);

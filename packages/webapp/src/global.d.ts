@@ -11,3 +11,7 @@ declare module '@awesome-movie-app/components/lib/Toggle/Toggle';
 declare module '@awesome-movie-app/components/lib/Search/Search';
 declare module '@awesome-movie-app/components/lib/Hero/Hero';
 declare module '@awesome-movie-app/components/lib/MovieCard/MovieCard';
+declare module '@awesome-movie-app/components/lib/Footer/Footer';
+declare module '@awesome-movie-app/components/lib/MovieCarousel/MovieCarousel';
+declare module '@awesome-movie-app/components/lib/MovieCreditRow/MovieCreditRow';
+declare module '@awesome-movie-app/core/lib/services/getMovieDetails';

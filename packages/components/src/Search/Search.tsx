@@ -43,6 +43,7 @@ const Search: React.FC<SearchProps> = ({
 		zIndex: 200,
 		position: 'absolute',
 		backgroundColor: themeContext.color.backgroundColor,
+		width: '90%',
 	};
 
 	const theme = {

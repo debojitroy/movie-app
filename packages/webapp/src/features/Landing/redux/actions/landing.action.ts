@@ -33,7 +33,7 @@ export const fetchPopularList = () => async (dispatch: any) => {
 			? popularPeopleResult.results.slice(0, 12).map((people: any) => ({
 					popularity: people.popularity,
 					name: people.name,
-					id: people.popularity,
+					id: people.id,
 					profilePath: people.profile_path,
 					gender: people.gender,
 			  }))

@@ -15,6 +15,7 @@ import { SearchContainer } from './styled';
 export interface SiteHeaderProps {
 	isLightTheme: boolean;
 	changeTheme: (theme: string) => void;
+	onMovieClick: (movieId: number, movieName: string) => void;
 }
 
 export interface MovieSuggestion {
@@ -29,6 +30,7 @@ export interface MovieSuggestion {
 const SiteHeader: React.FC<SiteHeaderProps> = ({
 	isLightTheme,
 	changeTheme,
+	onMovieClick,
 }) => {
 	const [isLight, setLight] = useState(isLightTheme);
 
@@ -125,9 +127,12 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
 					placeholder="Start typing a movie name to search"
 					movieSuggestions={[]}
 					search={searchFunction}
-					onMovieClick={(suggestion: MovieSuggestion) => {
-						console.log('Suggestion: ', suggestion);
-					}}
+					onMovieClick={(suggestion: MovieSuggestion) =>
+						onMovieClick(
+							suggestion.movieId !== '' ? parseInt(suggestion.movieId) : 0,
+							suggestion.movieName
+						)
+					}
 				/>
 			</SearchContainer>
 		</>
