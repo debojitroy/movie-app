@@ -161,7 +161,11 @@ export const getMovieDetail = (movieId: number) => async (dispatch: any) => {
 			detail: movie,
 		});
 	} catch (error) {
-		if (error.response && error.response.status === 404) {
+		if (
+			error.response &&
+			error.response.status >= 404 &&
+			error.response.status < 500
+		) {
 			dispatch({
 				type: MOVIE_DETAIL_NOT_FOUND,
 				movieId,

@@ -15,3 +15,4 @@ declare module '@awesome-movie-app/components/lib/Footer/Footer';
 declare module '@awesome-movie-app/components/lib/MovieCarousel/MovieCarousel';
 declare module '@awesome-movie-app/components/lib/MovieCreditRow/MovieCreditRow';
 declare module '@awesome-movie-app/core/lib/services/getMovieDetails';
+declare module '@awesome-movie-app/core/lib/services/getPersonDetails';

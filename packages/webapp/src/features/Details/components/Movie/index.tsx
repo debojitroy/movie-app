@@ -89,7 +89,7 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 
 	const isNewMovie = isNil(movie);
 
-	if (isNewMovie || movie.isLoading || !movie.detail) {
+	if (isNewMovie) {
 		return (
 			<MovieDetailContainer>
 				<LoadingText>Please Wait...</LoadingText>
@@ -113,6 +113,14 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 				<LoadingText>
 					{'Sorry something went wrong. Try refreshing the page'}
 				</LoadingText>
+			</MovieDetailContainer>
+		);
+	}
+
+	if (movie.isLoading || !movie.detail) {
+		return (
+			<MovieDetailContainer>
+				<LoadingText>Please Wait...</LoadingText>
 			</MovieDetailContainer>
 		);
 	}
