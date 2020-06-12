@@ -6,6 +6,8 @@ export const ResultRow = styled.div`
 	padding-left: 1rem;
 	border-bottom: 1px solid
 		${(props: { theme: Theme }) => props.theme.color.grayDark};
+	width: 100%;
+	max-width: 600px;
 
 	&:hover {
 		background: ${(props: { theme: Theme }) =>

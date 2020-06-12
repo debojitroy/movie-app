@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import isNil from 'lodash/isNil';
 import Autosuggest from 'react-autosuggest';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Theme } from '../../theme/theme';
 import SearchResultRow from '../SearchResultRow/SearchResultRow';
+import NoResultsFoundRow from '../SearchResultRow/NoResultsFoundRow';
 import { ResultRow } from './styled';
 
 export interface MovieSuggestion {
@@ -37,6 +39,13 @@ const Search: React.FC<SearchProps> = ({
 
 	const themeContext: Theme = useContext(ThemeContext);
 
+	const suggestionContainer: React.CSSProperties = {
+		zIndex: 200,
+		position: 'absolute',
+		backgroundColor: themeContext.color.backgroundColor,
+		width: '90%',
+	};
+
 	const theme = {
 		container: {
 			fontFamily: themeContext.font.family,
@@ -60,9 +69,7 @@ const Search: React.FC<SearchProps> = ({
 			boxShadow: themeContext.color.inputBorderShadowFocus,
 			backgroundColor: themeContext.color.backgroundColor,
 		},
-		suggestionsContainer: {
-			zIndex: 200,
-		},
+		suggestionsContainer: suggestionContainer,
 		suggestionsList: {
 			margin: 0,
 			padding: 0,
@@ -80,22 +87,25 @@ const Search: React.FC<SearchProps> = ({
 	const getSuggestionValue = (suggestion: MovieSuggestion) =>
 		suggestion.movieName;
 
-	const renderSuggestion = (suggestion: MovieSuggestion) => (
-		<ResultRow
-			onClick={() => {
-				onMovieClick && onMovieClick(suggestion);
-			}}
-		>
-			<SearchResultRow
-				idSelector={suggestion.movieId}
-				imageUrl={suggestion.moviePosterUrl}
-				imageAlt={`${suggestion.movieName} Poster Image`}
-				resultTitle={suggestion.movieName}
-				resultSubtitle={suggestion.movieYear}
-				resultBody={`${suggestion.movieRating} / 10`}
-			/>
-		</ResultRow>
-	);
+	const renderSuggestion = (suggestion: MovieSuggestion) =>
+		isNil(suggestion) || suggestion.movieId === '' ? (
+			<NoResultsFoundRow text="No records found" />
+		) : (
+			<ResultRow
+				onClick={() => {
+					onMovieClick && onMovieClick(suggestion);
+				}}
+			>
+				<SearchResultRow
+					idSelector={suggestion.movieId}
+					imageUrl={suggestion.moviePosterUrl}
+					imageAlt={`${suggestion.movieName} Poster Image`}
+					resultTitle={suggestion.movieName}
+					resultSubtitle={suggestion.movieYear}
+					resultBody={`${suggestion.movieRating} / 10`}
+				/>
+			</ResultRow>
+		);
 
 	const onChange = (_event: any, { newValue }: { newValue: string }) => {
 		setValue(newValue);

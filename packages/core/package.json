@@ -30,5 +30,8 @@
 	"dependencies": {
 		"@types/lodash": "^4.14.155",
 		"@types/node": "^14.0.10"
+	},
+	"peerDependencies": {
+		"axios": "^0.19.2"
 	}
 }

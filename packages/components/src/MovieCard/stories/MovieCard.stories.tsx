@@ -41,6 +41,86 @@ export const movieCard = () => (
 				cardText={text('cardText2', '8.4 / 10')}
 				cardAction={action('cardAction2')}
 			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
+			<MovieCard
+				imageUrl={text(
+					'imageUrl2',
+					'https://image.tmdb.org/t/p/w300/85cWkCVftiVs0BVey6pxX8uNmLt.jpg'
+				)}
+				imageAlt={text('imageAlt2', 'The Dark Knight Poster')}
+				cardTitle={text('cardTitle2', 'The Dark Knight')}
+				cardText={text('cardText2', '8.4 / 10')}
+				cardAction={action('cardAction2')}
+			/>
 		</CardDeck>
 	</Background>
 );

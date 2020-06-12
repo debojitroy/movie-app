@@ -7,8 +7,6 @@ import { Theme } from '../../theme/theme';
 export const CreditRow = styled(Row)`
 	padding: 1rem;
 	margin: 1rem;
-	border-bottom: 1px solid
-		${(props: { theme: Theme }) => props.theme.color.textColor};
 `;
 export const CreditLink = styled(Button)`
 	font-family: ${(props: { theme: Theme }) => props.theme.font.family};

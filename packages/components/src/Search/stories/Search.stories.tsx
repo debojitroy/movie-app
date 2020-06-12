@@ -68,11 +68,23 @@ const searchFunction = async (value: string): Promise<MovieSuggestion[]> => {
 		if (inputLength === 0) {
 			resolve([]);
 		} else {
-			resolve(
-				movies.filter((movie) =>
-					movie.movieName.toLowerCase().startsWith(value.toLowerCase())
-				)
+			const results = movies.filter((movie) =>
+				movie.movieName.toLowerCase().startsWith(value.toLowerCase())
 			);
+
+			if (results.length > 0) {
+				resolve(results);
+			} else
+				resolve([
+					{
+						moviePosterUrl: '',
+						movieId: '',
+						movieName: '',
+						movieYear: '',
+						movieRating: '',
+						movieSlug: '',
+					},
+				]);
 		}
 	});
 };

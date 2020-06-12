@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledNav } from './styled';
+import { StyledNav, StyledBrand } from './styled';
 
 const Logo: React.FC<{
 	imageSrc: string;
@@ -8,8 +8,8 @@ const Logo: React.FC<{
 	brandName: string;
 }> = ({ imageSrc, imageAlt, linkAddress, brandName }) => {
 	return (
-		<StyledNav bg="dark" variant="dark">
-			<StyledNav.Brand href={linkAddress}>
+		<StyledNav>
+			<StyledBrand href={linkAddress}>
 				<img
 					alt={imageAlt}
 					src={imageSrc}
@@ -18,7 +18,7 @@ const Logo: React.FC<{
 					className="d-inline-block align-top"
 				/>{' '}
 				{brandName}
-			</StyledNav.Brand>
+			</StyledBrand>
 		</StyledNav>
 	);
 };

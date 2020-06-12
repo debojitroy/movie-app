@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { text } from '@storybook/addon-knobs';
 import SearchResultRow from '../SearchResultRow';
+import NoResultsFound from '../NoResultsFoundRow';
 import { Theme } from '../../../theme/theme';
 
 const Background = styled.div`
@@ -29,6 +30,12 @@ export const withImage = () => (
 			resultSubtitle={text('resultSubtitle', '2012')}
 			resultBody={text('resultBody', '6.5 / 10')}
 		/>
+	</Background>
+);
+
+export const noResults = () => (
+	<Background>
+		<NoResultsFound text={text('text', 'No Results Found')} />
 	</Background>
 );
 
