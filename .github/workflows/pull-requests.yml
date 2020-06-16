@@ -8,6 +8,8 @@ jobs:
     name: Build Pull Request
     # This job runs on Linux
     runs-on: ubuntu-latest
+    container:
+      image: node:10.16-jessie
     steps:
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
@@ -22,3 +24,5 @@ jobs:
         uses: actions/checkout@v2
       - name: List files
         run: "ls -ltr"
+      - name: Check Node Version
+        run: "node --version"
