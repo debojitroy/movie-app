@@ -27,10 +27,13 @@ jobs:
           yarn build-js:prod
       - name: Build Storybook
         run: |
+          ls -ltr
+          cd packages/components
           yarn build:storybook
           cd ../..
       - name: Build Core
         run: |
+          ls -ltr
           cd packages/core
           yarn build-js:prod
           cd ../..
@@ -39,16 +42,19 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
+          ls -ltr
           cd packages/webapp
           yarn build:webapp:prod
           cd ../..
       - name: Run Components Tests
         run: |
+          ls -ltr
           cd packages/components
           yarn test
           cd ../..
       - name: Run Core Tests
         run: |
+          ls -ltr
           cd packages/core
           yarn test
           cd ../..
