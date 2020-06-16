@@ -8,7 +8,9 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"start": "cross-env development=true webpack-dev-server --config config/webpack.dev.js --open --port 8000"
+		"start": "cross-env development=true webpack-dev-server --config config/webpack.dev.js --open --port 8000",
+		"build:webapp:prod": "cross-env production=true webpack --config config/webpack.prod.js",
+		"deploy:webapp": "../../deployApp.sh dist/ awesome-movie-app-webapp E1FPBEJTBSUO1A"
 	},
 	"dependencies": {
 		"@awesome-movie-app/components": "^1.0.0",
