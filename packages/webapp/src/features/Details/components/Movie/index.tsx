@@ -36,6 +36,8 @@ import {
 	SimilarMoviesContainer,
 } from './styled';
 
+const pageFocusElement = 'movie-page-focus';
+
 export interface MovieDetailProps {
 	movieId: number;
 	movieName?: string;
@@ -83,6 +85,12 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 		} else {
 			console.log(`Skipping: Movie Details for ${movieId}`);
 		}
+
+		const focusElement = document.querySelector(`#${pageFocusElement}`);
+
+		if (focusElement) {
+			focusElement.scrollIntoView();
+		}
 	}, [movieId]);
 
 	const movie = movieState[movieId];
@@ -92,7 +100,7 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 	if (isNewMovie) {
 		return (
 			<MovieDetailContainer>
-				<LoadingText>Please Wait...</LoadingText>
+				<LoadingText id={pageFocusElement}>Please Wait...</LoadingText>
 			</MovieDetailContainer>
 		);
 	}
@@ -100,7 +108,7 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 	if (movie.notFound) {
 		return (
 			<MovieDetailContainer>
-				<LoadingText>
+				<LoadingText id={pageFocusElement}>
 					{"Sorry we couldn't find the requested movie"}
 				</LoadingText>
 			</MovieDetailContainer>
@@ -110,7 +118,7 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 	if (movie.isError) {
 		return (
 			<MovieDetailContainer>
-				<LoadingText>
+				<LoadingText id={pageFocusElement}>
 					{'Sorry something went wrong. Try refreshing the page'}
 				</LoadingText>
 			</MovieDetailContainer>
@@ -119,7 +127,7 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 
 	if (movie.isLoading || !movie.detail) {
 		return (
-			<MovieDetailContainer>
+			<MovieDetailContainer id={pageFocusElement}>
 				<LoadingText>Please Wait...</LoadingText>
 			</MovieDetailContainer>
 		);
@@ -138,7 +146,9 @@ const MovieDetails: React.FC<MovieDetailProps> = ({
 		<MovieDetailContainer>
 			<MovieDetailHeader>
 				<MovieHeaderNameContainer>
-					<MovieHeading>{movie.detail.title}</MovieHeading>
+					<MovieHeading id={pageFocusElement}>
+						{movie.detail.title}
+					</MovieHeading>
 					<p>
 						<MovieMeta>
 							{getMovieYear(movie.detail.release_date)} |{' '}

@@ -50,7 +50,7 @@ const SiteContainer: React.FC<{ theme: string; children: React.ReactNode }> = ({
 						</a>
 					</p>
 					<p>
-						{' '}
+						&nbsp;&nbsp;
 						<a
 							href="https://github.com/debojitroy/movie-app"
 							target="_blank"

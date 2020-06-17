@@ -15,7 +15,7 @@
 		"test": "jest",
 		"test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
 		"prebuild:storybook": "rimraf .jest-test-results.json && yarn test:generate-output",
-		"build:storybook": "build-storybook -c .storybook -o dist/",
+		"build:storybook": "build-storybook -c .storybook -o dist/ --quiet",
 		"deploy:storybook": "../../deployApp.sh dist/ awesome-movie-app-components E3OVTB81UR1OB7"
 	},
 	"devDependencies": {

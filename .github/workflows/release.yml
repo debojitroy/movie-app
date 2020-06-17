@@ -1,11 +1,11 @@
-name: Pull Requests
+name: Release
 on:
-  pull_request:
+  push:
     branches:
       - master
 jobs:
   build:
-    name: Build and Test Pull Request
+    name: Build, Test, Release Movie App
     # This job runs on Linux
     runs-on: ubuntu-latest
     container:
@@ -48,6 +48,20 @@ jobs:
         run: |
           cd packages/core
           yarn test
+      - name: Deploy Storybook
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          cd packages/components
+          yarn deploy:storybook
+      - name: Deploy WebApp
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          cd packages/webapp
+          yarn deploy:webapp
       - name: Archive Components Build Files
         uses: actions/upload-artifact@v1
         with:
