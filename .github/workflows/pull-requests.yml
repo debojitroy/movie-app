@@ -1,0 +1,80 @@
+name: Pull Requests
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build and Test Pull Request
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    container:
+      image: unohomeloans/endcustomerportal:node12.8.1-chrome78-ff70-cypress-robot
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: List files
+        run: "ls -ltr"
+      - name: Check Node Version
+        run: "node --version"
+      - name: Check Yarn Version
+        run: "yarn --version"
+      - name: Pull Dependencies
+        run: "yarn"
+      - name: Build Components
+        run: |
+          cd packages/components
+          yarn build-js:prod
+      - name: Build Storybook
+        run: |
+          cd packages/components
+          yarn build:storybook
+      - name: Build Core
+        run: |
+          cd packages/core
+          yarn build-js:prod
+      - name: Build WebApp
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          cd packages/webapp
+          yarn build:webapp:prod
+      - name: Run Components Tests
+        run: |
+          cd packages/components
+          yarn test
+      - name: Run Core Tests
+        run: |
+          cd packages/core
+          yarn test
+      - name: Archive Components Build Files
+        uses: actions/upload-artifact@v1
+        with:
+          name: components
+          path: packages/components/lib
+      - name: Archive Storybook Build Files
+        uses: actions/upload-artifact@v1
+        with:
+          name: storybook
+          path: packages/components/dist
+      - name: Archive Components Coverage
+        uses: actions/upload-artifact@v1
+        with:
+          name: components-coverage
+          path: packages/components/coverage
+      - name: Archive Core Build Files
+        uses: actions/upload-artifact@v1
+        with:
+          name: core
+          path: packages/core/lib
+      - name: Archive Core Coverage
+        uses: actions/upload-artifact@v1
+        with:
+          name: core-coverage
+          path: packages/core/coverage
+      - name: Archive WebApp Build Files
+        uses: actions/upload-artifact@v1
+        with:
+          name: webapp
+          path: packages/webapp/dist

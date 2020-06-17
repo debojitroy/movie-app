@@ -34,6 +34,16 @@ export const footer = () => (
 					Debojit Roy
 				</a>
 			</p>
+			<p>
+				&nbsp;&nbsp;
+				<a
+					href="https://github.com/debojitroy/movie-app/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Source
+				</a>
+			</p>
 		</Footer>
 	</Background>
 );
