@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@awesome-movie-app/components": "^1.0.0",
 		"@awesome-movie-app/core": "^1.0.0",
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"bootstrap": "^4.5.0",
 		"lodash": "^4.17.15",
 		"react": "^16.13.1",
